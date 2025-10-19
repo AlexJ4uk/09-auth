@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { createNoteProps } from "../api";
+import { createNoteProps } from "../api/clientApi";
 
 interface NoteDraftStore {
   draft: createNoteProps;
