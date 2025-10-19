@@ -1,5 +1,5 @@
 "use client";
-import css from "@/app/notes/filter/[...slug]/error.module.css";
+import css from "@/app/(private routes)/notes/[id]/error.module.css";
 
 interface Props {
   error: Error;
