@@ -5,7 +5,12 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuthStore } from "@/lib/store/authStore";
 import { ApiError } from "@/app/api/api";
-import { login, userRegister } from "@/lib/api/clientApi";
+import { login } from "@/lib/api/clientApi";
+
+type LoginFormData = {
+  email: string;
+  password: string;
+};
 
 const SignIn = () => {
   const router = useRouter();
@@ -14,7 +19,7 @@ const SignIn = () => {
 
   const handleSubmit = async (formData: FormData) => {
     try {
-      const formValues = Object.fromEntries(formData) as userRegister;
+      const formValues = Object.fromEntries(formData) as LoginFormData;
       const resp = await login(formValues);
       if (resp) {
         setUser(resp);
